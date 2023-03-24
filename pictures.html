@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mjois AB</title>
+    <style>
+        .mySlides {
+            display: none;
+        }
+    </style>
+    <meta name="author" content="Monika Eriksson">
+    <meta name="description" content="MJOIS AB arbetar inom byggbranschen med till- och ombyggnationer, renoveringar.">
+    <meta name="keywords"
+        content="byggbranschen,tillbyggnad,ombyggnad,renovering,mjois ab,takarbeten,fastighetsjuridik">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li>
+                </li>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="services.html">Tjänster</a></li>
+                <li><a href="pictures.html">Bilder</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="about.html">Om oss</a></li>
+            </ul>
+            <hr>
+            <h1>MJOIS AB</h1>
+        </nav>
+    </header>
+    <section>
+        <h2>Bastu</h2>
+        <div class="container">
+        </div>
+        <div class="content row-padding" style="max-width: 500px;">
+            <img class="mySlides" src="images/saunaone.jpeg" style="height: 100; display:  none;">
+            <img class="mySlides" src="images/saunafour.jpeg" style="height: 100; display: none;">
+            <img class="mySlides" src="images/saunathree.jpg" style="height: 100; display: block;">
+            <div class="row-padding section">
+                <div class="col s4">
+                    <img class="demo opacity hover-opacity-off" src="images/saunaone.jpeg" style="height: 100; cursor: pointer;" onclick="currentDiv(1)">
+                </div>
+                <div class="col s4">
+                    <img class="demo opacity hover-opacity-off" src="images/saunafour.jpeg" style="height: 100;cursor: pointer;" onclick="currentDiv(2)">
+                    
+                </div>
+                <div class="col s4">
+                    <img class="demo opacity hover-opacity-off" src="images/saunathree.jpg" style="height: 100;cursor: pointer;" onclick="currentDiv(3)">
+                </div>
+            </div>
+        </div>
+        <script>
+            function currentDiv(n) {
+                showDivs(slideIndex = n);
+            }
+            
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" opacity-off", "");
+                }
+                x[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " opacity-off";
+            }
+            </script>
+
+</section>
+
+<footer>
+    <iframe src="footer.html" width="350" height="315" style="border: none; margin: 30px;"></iframe>
+</footer>
+</body>
+
+</html>
