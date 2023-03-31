@@ -4,73 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mjois AB</title>
+    <style>
+        .mySlides {
+            display: none;
+        }
+    </style>
     <meta name="author" content="Monika Eriksson">
     <meta name="description" content="MJOIS AB arbetar inom byggbranschen med till- och ombyggnationer, renoveringar.">
     <meta name="keywords"
         content="byggbranschen,tillbyggnad,ombyggnad,renovering,mjois ab,takarbeten,fastighetsjuridik">
-    <link rel="stylesheet" href="styles/styles.css" type="text/css">
-    <title>MJOIS AB - BILDER</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
-    <header class="main-header">
-        <nav class="nav main-nav">
+    <header>
+        <nav class="menu">
             <ul>
-                <li><a href="index.html">HEM</a></li>
-                <li><a href="services.html">TJÄNSTER</a></li>
-                <li><a href="pictures.html">BILDER</a></li>
-                <li><a href="contact.html">KONTAKT</a></li>
-                <li><a href="about.html">OM OSS</a></li>
+                <li>
+                </li>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="services.html">Tjänster</a></li>
+                <li><a href="pictures.html">Bilder</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="about.html">Om oss</a></li>
             </ul>
             <hr>
-            <h1 class="name name-large">MJOIS AB</h1>
+            <h1>MJOIS AB</h1>
         </nav>
     </header>
-    <section class="container-slideshow content-section">
-        <h2 class="section-header">VÅRA ARBETEN</h2>
-        <div class="slideshow first">
-            <div class="slides">
-                <input type="radio" name="r" id="r1" checked>
-                <input type="radio" name="r" id="r2">
-                <input type="radio" name="r" id="r3">
-                <input type="radio" name="r" id="r4">
-                <input type="radio" name="r" id="r5">
-                <div class="slide s1">
-                    <img src="images/m7.jpeg" alt="Maskinhall" />
+    <section>
+        <h2>Bastu</h2>
+        <div class="container">
+        </div>
+        <div class="content row-padding" style="max-width: 500px;">
+            <img class="mySlides" src="images/saunaone.jpeg" style="height: 100; display:  none;">
+            <img class="mySlides" src="images/saunafour.jpeg" style="height: 100; display: none;">
+            <img class="mySlides" src="images/saunathree.jpg" style="height: 100; display: block;">
+            <div class="row-padding section">
+                <div class="col s4">
+                    <img class="demo opacity hover-opacity-off" src="images/saunaone.jpeg" style="height: 100; cursor: pointer;" onclick="currentDiv(1)">
                 </div>
-                <div class="slide">
-                    <img src="images/r1.jpeg" alt="Takarbete" />
+                <div class="col s4">
+                    <img class="demo opacity hover-opacity-off" src="images/saunafour.jpeg" style="height: 100;cursor: pointer;" onclick="currentDiv(2)">
+                    
                 </div>
-                <div class="slide">
-                    <img src="images/s6.jpeg" alt="Bastu" />
-                </div>
-                <div class="slide">
-                    <img src="images/sc1.jpeg" alt="Solceller" />
-                </div>
-                <div class="slide">
-                    <img src="images/s7.jpeg" alt="Bastu" />
+                <div class="col s4">
+                    <img class="demo opacity hover-opacity-off" src="images/saunathree.jpg" style="height: 100;cursor: pointer;" onclick="currentDiv(3)">
                 </div>
             </div>
-            <div class="navigation">
-                <label for="r1" class="bar"></label>
-                <label for="r2" class="bar"></label>
-                <label for="r3" class="bar"></label>
-                <label for="r4" class="bar"></label>
-                <label for="r5" class="bar"></label>
-            </div>
         </div>
-    </section>
-    <footer class="main-footer">
-        <div class="container main-footer-container">
-            <h3 class="name">MJOIS&nbsp;AB</h3>
-            <ul class="nav footer-nav">
-                <li>Företaget har F-skattsedel.</li>
-                <li>Organisationsnummer:&nbsp;556869-0399</li>
-                <li>&copy;&nbsp;Copyright&nbsp;MJOIS&nbsp;AB</li>
-            </ul>
-        </div>
-    </footer>
+        <script>
+            function currentDiv(n) {
+                showDivs(slideIndex = n);
+            }
+            
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" opacity-off", "");
+                }
+                x[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " opacity-off";
+            }
+            </script>
+
+</section>
+
+<footer>
+    <iframe src="footer.html" width="350" height="315" style="border: none; margin: 30px;"></iframe>
+</footer>
 </body>
 
 </html>
